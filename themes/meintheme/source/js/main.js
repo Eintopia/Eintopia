@@ -74,4 +74,5 @@ pages.forEach((p, i) => {
 });
 
 // 初始化轮播
+// //之后需修改
 updateCarousel();
