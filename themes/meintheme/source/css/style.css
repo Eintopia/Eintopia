@@ -1,0 +1,233 @@
+/*---------------------------------------
+  全局样式
+---------------------------------------*/
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* 禁止默认滚动 */
+  font-family: Arial, sans-serif;
+  background: #0b0d12;
+  color: #fff;
+}
+
+/*---------------------------------------
+  顶部导航栏
+---------------------------------------*/
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0,0,0,0.5);
+  box-sizing: border-box;
+}
+
+.topbar-logo {
+  color: #f3c648;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.topbar-nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  color: #f3c648;
+  background: transparent;
+}
+
+.topbar-nav a.active {
+  background: #f3c648;
+  color: #0b0d12;
+}
+
+/*---------------------------------------
+  横向滚动父容器
+---------------------------------------*/
+.main-container {
+  display: flex;
+  width: 300vw; /* 3 屏宽度，后续可以根据屏数调整 */
+  height: 100vh;
+  transition: transform 0.8s ease;
+}
+
+/*---------------------------------------
+  每个模块 section
+---------------------------------------*/
+.section {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/*---------------------------------------
+  Home Section
+---------------------------------------*/
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-content h1 {
+  font-size: 64px;
+  margin: 0;
+}
+
+.home-content p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #9aa4af;
+  max-width: 600px;
+  text-align: center;
+}
+
+/*---------------------------------------
+  Post Section
+---------------------------------------*/
+.post-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.post-carousel {
+  position: relative;
+  width: 80%;
+  max-width: 960px;
+}
+
+.carousel-track {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.post-card {
+  flex: 0 0 300px;
+  margin: 0 16px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.post-image {
+  width: 100%;
+  height: 160px;
+  background: #36c2ff;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.post-title {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.post-excerpt {
+  font-size: 14px;
+  color: #9aa4af;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(243,198,72,0.8);
+  border: none;
+  color: #0b0d12;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: -60px;
+}
+
+.carousel-btn.next {
+  right: -60px;
+}
+
+.carousel-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.carousel-pagination .page {
+  margin: 0 6px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.3s;
+}
+
+.carousel-pagination .page.active {
+  background: #f3c648;
+  color: #0b0d12;
+}
+
+/*---------------------------------------
+  Category Section
+---------------------------------------*/
+.category-section {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.category-left {
+  flex: 1;
+  background: rgba(54,194,255,0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-right {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-right li {
+  margin-bottom: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.category-right li:hover {
+  color: #f3c648;
+}
